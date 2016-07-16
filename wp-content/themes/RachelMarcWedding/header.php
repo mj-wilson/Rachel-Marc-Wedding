@@ -24,6 +24,11 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="content">
+		<div id="logo">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/emblem.svg"">
+			</a>
+		</div>
 		</div>
 	</header>
 

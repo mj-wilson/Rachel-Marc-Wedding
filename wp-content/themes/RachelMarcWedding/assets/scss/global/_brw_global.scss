@@ -56,6 +56,20 @@ body:before {
 	background: linear-gradient(to bottom, rgba(101,17,57,1) 0%,rgba(255,255,255,0) 100%); 
 }*/
 
+#masthead {
+	padding: rem-calc(30px 0 0);
+	#logo {
+		width: 100px;
+		margin:auto;
+		position: relative;
+		text-align: center;
+	}
+}
+body.home {
+	#masthead #logo {
+		display: none;
+	}
+}
 #front {
 	padding: rem-calc(50 0 300);
 	z-index: 10;
@@ -108,6 +122,7 @@ body:before {
 			&.leaf {
 				padding: 15px 30px 0;
 				width: 160px;
+				display: inline-block;
 				img {
 					max-width: 100%;
 					transform: rotate(25deg);
@@ -139,6 +154,7 @@ body:before {
 			&.leaf {
 				padding: 0 10px 0;
 				width: 80px;
+				display: inline-block;
 				img {
 					max-width: 100%;
 					transform: rotate(-195deg);
@@ -173,3 +189,74 @@ body:before {
 	}
 
 }
+@media all and (max-width: 900px) {
+	#front {
+		#rach-marc {
+			div {
+				font-size: 70px;
+			}
+			div.and {
+			    padding: 0 0 0 25px;
+			    margin-right: -30px;
+			    font-size: 70px;
+			}
+		}
+		#date-venue {
+			div {
+			font-size: 25px;
+			}
+		}
+		#dinner-dancing {
+			font-size: 24px;
+		}
+	}
+	
+}
+@media all and (max-width: 768px) {
+	#front {
+		#date-venue {
+			div {
+				display: block;
+			}
+			div.leaf {
+				    padding: 15px 30px;
+			}
+
+		}
+	}
+}
+@media all and (max-width: 400px) {
+	#front {
+		padding: rem-calc(50 0 110);
+		#rach-marc {
+			padding: 0 0 10px;
+			div {
+				font-size: 44px;
+			}
+			div.and {
+			    padding: 0 0 0 5px;
+			    margin-right: -25px;
+			    font-size: 48px;
+			}
+		}
+		#date-venue {
+			div {
+			font-size: 20px;
+				&.leaf {
+				    padding: 15px 40px;
+				}
+			}
+		}
+		#dinner-dancing {
+			font-size: 20px;
+			div {
+				display: block;
+				&.leaf {
+					padding-bottom: 5px;
+				}
+			}
+		}
+	}
+
+}
+
