@@ -28,7 +28,7 @@ get_header(); ?>
 				<div class="adults">adults only please</div>
 			</div>
 			<div id="rsvp">
-				<a href="/rsvp">RSVP Here</a>
+				please <a href="/rsvp">RSVP</a> by september 1<sup>st</sup></div>
 			</div>
 		</div>
 

@@ -87,6 +87,14 @@ font-family: 'Sverige Decorated';
   My custom styles:
   Add your scss files below to structure your project styles
 */
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
 
 // Modules
 @import "modules/navigation";
@@ -103,3 +111,5 @@ font-family: 'Sverige Decorated';
 // Templates
 
 @import "global/brw_global"; // Main CSS for this site
+@import "global/brw_global_responsive"; // Main responsive CSS for this site
+

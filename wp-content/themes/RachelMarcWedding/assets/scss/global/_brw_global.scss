@@ -15,7 +15,7 @@ html {
 	margin: auto;
 	padding: 0 rem-calc(20);
 }
-body:after {
+body#rmwedding:after {
 	content: '';
 	top: 0;
 	left: 0;
@@ -26,7 +26,7 @@ body:after {
 	background: url(../images/treeline1.svg) bottom center no-repeat;
 	background-size: 100% auto;
 }
-body:before {
+body#rmwedding:before {
 	top: 0;
 	left: 0;
 	content: '';
@@ -38,8 +38,15 @@ body:before {
 	background-size: 100% auto;
 	opacity: 0.5;
 }
+body#rmwedding.page-template-two-column:after,body#rmwedding.page-id-7:after {
+	background: url(../images/treeline3.svg) bottom center no-repeat;
+	background-size: 100% auto;
+}
+body#rmwedding.page-template-two-column:before, body#rmwedding.page-id-7:before {
+	opacity: .25;
+}
 .wrapper {
-	z-index: 1;
+	z-index: 999;
 	position: relative;
 }
 /*.wrapper:before{
@@ -55,19 +62,110 @@ body:before {
 	background: -webkit-linear-gradient(top, rgba(101,17,57,1) 0%,rgba(255,255,255,0) 100%); 
 	background: linear-gradient(to bottom, rgba(101,17,57,1) 0%,rgba(255,255,255,0) 100%); 
 }*/
+h2 {
+	font-family: 'Playball';
+	color: $purple;
+	font-size: 28px;
+	margin: 0 0 12px;
+	line-height: 1em;
+}
+h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: $purple;
+	font-size: 16px;
+	margin: 0;
+}
+h4 {
+	font-weight: bold;
+	color: $purple;
+	font-family: $serif;
+	font-style: italic;
+	font-size: 17px;
+	letter-spacing: 0.1em;
+	em {
+		color: $dark-gold;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		margin: 0 0 2px;
+		display: block;
+	}
 
+}
 #masthead {
 	padding: rem-calc(30px 0 0);
+	.content {
+		display: flex;
+		text-align: center;
+	}
 	#logo {
-		width: 100px;
-		margin:auto;
+		width: 200px;
 		position: relative;
 		text-align: center;
+		padding: 0 50px;
+	}
+	.nav {
+		width: calc(50% - 100px);
+		padding: 0;
+		ul {
+			text-align: left;
+		}
+		&.nav-left {
+			ul {
+				text-align: right;
+			}
+		}
+		li {
+			display: inline-block;
+			padding: 0 10px;
+			a {
+				color: $gold;
+				font-weight:bold;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				font-size: 18px; 
+				padding: 0 10px;
+				line-height: 50px;
+				&:hover {
+					opacity: 0.5;
+					@include transition(all .3s);
+				}
+			}
+		&.active {
+			a {
+				background: none;
+				color: $purple;
+				position: relative;
+				background: url('../images/swish.svg') bottom center no-repeat;
+				background-size: auto 13px;
+			}
+		}
+		}
+		&.nav-full {
+			display: none;
+		}
 	}
 }
 body.home {
-	#masthead #logo {
-		display: none;
+	#masthead {
+		.nav {
+			display: none;
+		}
+		#logo {
+			display: none !important;
+		}
+		.menu-holder{
+			width: 100%;			
+		}
+		.nav-full {
+			width: 100%;
+			display: block;
+			ul {
+				text-align: center;
+			}
+		}
+
 	}
 }
 #front {
@@ -167,96 +265,271 @@ body.home {
 	}
 	#rsvp {
 		text-align: center;
-		padding: 25px 0;
-		display: none;
+		padding: 35px 0;
+		font-size: 24px;
+		font-family: 'Playball';
 		a {
-			display: inline-block;
+			font-family: $body-font-family;
+			font-size: 20px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			border-bottom: 1px solid rgba(101,17,57,0.6);
+			outline: none;
+			&:hover {
+				opacity: 0.6;
+				@include transition(.3s all)
+			}
+		}
+	}
+
+}
+
+#page {
+	padding: rem-calc(40 0 180);
+	.column-container {
+		max-width: 950px;
+		margin: auto;
+		display: flex;
+	}
+	.content {
+		.col {
+			width: 50%;
+			padding: 0 30px;
+			color: $dark-gold;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 1.5em;
+			p, ul {
+				margin: 13px 0 18px;
+				line-height: 1.7em;
+			}
+			ul {
+				padding: 0 0 0 16px;
+				li {
+					padding: 0 0 8px;
+				}
+			}
+			em {
+				font-weight: bold;
+				font-family: $serif;
+				font-style: italic;
+				font-size: 14px;
+				letter-spacing: 0.05em;
+
+			}
+			strong {
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: $gold;
+				font-size: 14px;
+				margin: 0;
+			}
+			a {
+				font-family: $serif;
+				font-weight: bold;
+				font-style: italic;
+				font-size: 15px;
+				letter-spacing: 0.05em;
+				border-bottom: 1px solid rgba(101,17,57,0.6);
+				&:hover {
+					opacity: 0.6;
+					@include transition(.3s all)
+				}
+			}
+		}
+	}
+}
+.rsvp-container {
+	padding: rem-calc(40 0 180);
+	max-width: 800px;
+	margin: auto;
+	text-align: center;
+	> .rsvpParagraph {
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+		margin: 0 0 30px;
+		em {
+			font-family: 'Playball';
+			color: $purple;
+			font-size: 30px;
+			margin: 0;
+			text-transform: none;
+			display: block;
+			font-weight: normal;
+			letter-spacing: 0;
+		}
+	}
+	#rsvpPlugin {
+		label {
+			color: $dark-gold;
+			font-weight: bold;
+			font-family: $serif;
+			font-style: italic;
+			font-size: 17px;
+			letter-spacing: 0.1em;
+			text-transform: lowercase;
+		}
+		input[type="text"]{
+			max-width: 300px;
+			border-color: #d1b85e;
+			color: $gold;
+			height: 40px;
+			background: #fff3fd;
+		}
+		textarea{
+			border-color: #d1b85e;
+			color: $gold;
+			background: #fff3fd;
+			resize: none;
+			margin-top: 15px;
+			height: 130px;
+		}
+		input.firststep, input[value='RSVP']{
+			display:block;
+			margin: auto;
+			border:none;
 			background: url(../images/foil.jpg) -427px -509px no-repeat;
 			background-size: 1000px auto;
-			line-height: 1em;
+			line-height: 120px;
 			height: 120px;
-			padding: 32px 0 0 2px;
+			padding: 2px 0 0 0;
 			width: 120px;
 			color: $bg;
 			text-transform: uppercase;
 			font-weight: bold;
-			font-size: 30px;
+			font-size: 17px;
 			border-radius: 50%;
-			letter-spacing: 0.09em;
+			letter-spacing: 0.05em;
 			cursor: pointer;
 			text-shadow: 0px 1px 1px $gold;
-		}
-	}
-
-}
-@media all and (max-width: 900px) {
-	#front {
-		#rach-marc {
-			div {
-				font-size: 70px;
-			}
-			div.and {
-			    padding: 0 0 0 25px;
-			    margin-right: -30px;
-			    font-size: 70px;
+			outline: none;
+			&:hover {
+				color: $purple;
+				@include transition(.3s color);
 			}
 		}
-		#date-venue {
-			div {
-			font-size: 25px;
-			}
+		input[value='RSVP']{ 
+			font-size: 26px;
+			line-height: 100px;
+			height: 100px;
+			padding: 2px 0 0 0;
+			width: 100px;
 		}
-		#dinner-dancing {
+		> p.rsvpParagraph, p.special {
+			font-family: 'Playball';
+			color: $purple;
 			font-size: 24px;
+			margin: 0 0 15px;
+			line-height: 1em;
 		}
-	}
-	
-}
-@media all and (max-width: 768px) {
-	#front {
-		#date-venue {
-			div {
-				display: block;
+		form#rsvpForm {
+			padding-top: 10px;
+			> .rsvpParagraph {
+				color: $dark-gold;
+				font-weight: bold;
+				font-size: 14px;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				margin: 0;
+
 			}
-			div.leaf {
-				    padding: 15px 30px;
+			.rsvpFormField  {
+				display: inline-block;
+				margin-top: 0;
+			}
+			.rsvpAdditionalAttendee {
+				text-align: inherit;
+			    border-top: none;
+			    .rsvpParagraph {
+					color: $dark-gold;
+					font-weight: bold;
+					font-size: 14px;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					margin: 0;
+			    }
+			}
+			.rsvpCustomQuestions {
+			    .rsvpParagraph {
+					color: $dark-gold;
+					font-weight: bold;
+					font-size: 14px;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					margin: 0;
+					line-height: 1.2em;
+			    }
+				a {
+					font-family: $serif;
+					font-weight: bold;
+					font-style: italic;
+					font-size: 15px;
+					letter-spacing: 0.05em;
+					text-transform: none;
+					border-bottom: 1px solid rgba(101,17,57,0.6);
+					&:hover {
+						opacity: 0.6;
+						@include transition(.3s all)
+					}
+				}
+
 			}
 
 		}
-	}
+		.pastrsvp {
+			input[type='submit'] {
+				background: none;
+				border: none;
+				text-transform: uppercase;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+				margin: 20px 20px;
+				font-size: 20px;
+				padding: 0;
+				border-bottom: 1px solid rgba(101,17,57,0.6);
+				cursor: pointer;
+				outline: none;
+					&:hover {
+						opacity: 0.6;
+						@include transition(.3s all)
+					}
+			}
+		}
+ 	}
 }
-@media all and (max-width: 400px) {
-	#front {
-		padding: rem-calc(50 0 110);
-		#rach-marc {
-			padding: 0 0 10px;
-			div {
-				font-size: 44px;
-			}
-			div.and {
-			    padding: 0 0 0 5px;
-			    margin-right: -25px;
-			    font-size: 48px;
-			}
-		}
-		#date-venue {
-			div {
-			font-size: 20px;
-				&.leaf {
-				    padding: 15px 40px;
-				}
-			}
-		}
-		#dinner-dancing {
-			font-size: 20px;
-			div {
-				display: block;
-				&.leaf {
-					padding-bottom: 5px;
-				}
+.page-id-13 {
+	.page-content {
+		text-align: center;
+		padding: 40px 0 250px;
+		p {
+			margin: 0 0 40px;
+			a {
+				text-transform: uppercase;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+				margin: 20px 0px;
+				font-size: 16px;
+				padding: 0;
+				border-bottom: 1px solid rgba(101,17,57,0.6);
+				cursor: pointer;
+				outline: none;
+					&:hover {
+						opacity: 0.6;
+						@include transition(.3s all)
+					}
 			}
 		}
+
 	}
 
+
 }
+
+
+
+
+
 

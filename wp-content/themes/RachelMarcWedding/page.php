@@ -15,7 +15,9 @@
 <?php while ( have_posts() ) : the_post(); ?>
 <section class="page" role="main">
     <div class="content">
-    <?php the_content(); ?>
+    	<div class="page-content">
+	    	<?php the_content(); ?>
+	    </div>
     </div>
 
 </section>
