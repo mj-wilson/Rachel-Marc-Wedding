@@ -7161,10 +7161,17 @@ body.home #masthead .nav-full {
   .rsvp-container #rsvpPlugin textarea {
     border-color: #d1b85e;
     color: #BA9740;
-    background: #fff3fd;
+    background-color: #fff3fd;
     resize: none;
     margin-top: 15px;
     height: 130px; }
+  .rsvp-container #rsvpPlugin select {
+    border-color: #d1b85e;
+    color: #BA9740;
+    background-color: #fff3fd;
+    margin-top: 15px;
+    outline: none;
+    max-width: 150px; }
   .rsvp-container #rsvpPlugin input.firststep, .rsvp-container #rsvpPlugin input[value='RSVP'] {
     display: block;
     margin: auto;
@@ -7420,6 +7427,10 @@ body.home #masthead .nav-full {
       #front #dinner-dancing div {
         display: block; }
         #front #dinner-dancing div.leaf {
-          padding-bottom: 5px; } }
+          padding-bottom: 5px; }
+    #front #rsvp {
+      font-size: 20px; }
+      #front #rsvp a {
+        font-size: 16px; } }
 
 /*# sourceMappingURL=foundation.css.map */

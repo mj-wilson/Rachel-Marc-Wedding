@@ -382,10 +382,18 @@ body.home {
 		textarea{
 			border-color: #d1b85e;
 			color: $gold;
-			background: #fff3fd;
+			background-color: #fff3fd;
 			resize: none;
 			margin-top: 15px;
 			height: 130px;
+		}
+		select{
+			border-color: #d1b85e;
+			color: $gold;
+			background-color: #fff3fd;
+			margin-top: 15px;
+			outline: none;
+			max-width: 150px;
 		}
 		input.firststep, input[value='RSVP']{
 			display:block;
