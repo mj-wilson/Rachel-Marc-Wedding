@@ -7176,7 +7176,7 @@ body.home #masthead .nav-full {
     display: block;
     margin: auto;
     border: none;
-    background: url(../images/foil.jpg) -427px -509px no-repeat;
+    background: #decc72 url(../images/foil.jpg) -427px -509px no-repeat;
     -webkit-background-size: 1000px auto;
             background-size: 1000px auto;
     line-height: 120px;
@@ -7219,7 +7219,7 @@ body.home #masthead .nav-full {
       margin: 0; }
     .rsvp-container #rsvpPlugin form#rsvpForm .rsvpFormField {
       display: inline-block;
-      margin-top: 0; }
+      margin: 0 0 15px; }
     .rsvp-container #rsvpPlugin form#rsvpForm .rsvpAdditionalAttendee {
       text-align: inherit;
       border-top: none; }
@@ -7250,6 +7250,8 @@ body.home #masthead .nav-full {
         opacity: 0.6;
         -webkit-transition: 0.3s all;
         transition: 0.3s all; }
+    .rsvp-container #rsvpPlugin form#rsvpForm .rsvpCustomQuestions input[type="text"], .rsvp-container #rsvpPlugin form#rsvpForm .rsvpCustomQuestions input[type='radio'] {
+      margin-top: 15px; }
   .rsvp-container #rsvpPlugin .pastrsvp input[type='submit'] {
     background: none;
     border: none;
